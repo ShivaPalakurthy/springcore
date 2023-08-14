@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+           <!-- This XML file is for the constructor injection package -->
+   <bean class="com.springcore.constructorInjection.Certi" name="cer">
+  <constructor-arg value="Android Using Kotlin" type="String"/>
+  </bean>      
+ <bean class="com.springcore.constructorInjection.Person" name="person">
+ 		<constructor-arg value="Durgesh" />
+ 		<constructor-arg value="12" />
+ 		<constructor-arg ref="cer" />
+ 	</bean>
+ 	
+ 	
+ <!-- c-schema is used to add values in constructors where as p-schema is used to add values for properties  -->
+ <bean class="com.springcore.constructorInjection.Person" name="cschema" c:name="Shiva" c:personid="23" c:certi-ref="cer"></bean>
+
+<!-- Constructor argument for Addition class in constructor injection package -->
+<bean class="com.springcore.constructorInjection.Addition" name="add" >
+	<constructor-arg value="12"/>
+	<constructor-arg value="34"/>
+</bean>
+<!-- we can also change the value to which argument we are going pass through constructor argument with the help of
+	 index & index starting from 0,1,... .below is the example of this -->
+<bean class="com.springcore.constructorInjection.Addition" name="add1"  >
+	<constructor-arg value="12" index="1"/>
+	<constructor-arg value="34" index="0"/>
+</bean>
+</beans>

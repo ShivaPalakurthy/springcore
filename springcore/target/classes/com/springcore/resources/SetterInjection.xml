@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <bean class="com.springcore.setter.Student" name="student1">
+ 		<property name="studentId">
+ 			<value>22314</value>
+ 		</property>
+ 		<property name="studentName">
+ 			<value>Shiva Palakurthy</value>
+ 		</property>
+ 		<property name="studentAddress">
+ 			<value>Warangal</value>
+ 		</property>
+ 
+ </bean>          
+  <bean class="com.springcore.setter.Student" name="student2">
+ 		<property name="studentId">
+ 			<value>29678</value>
+ 		</property>
+ 		<property name="studentName">
+ 			<value>Surendra Vadde</value>
+ 		</property>
+ 		<property name="studentAddress">
+ 			<value>Ananthpur</value>
+ 		</property>
+ 
+ </bean>   
+ <!-- we can write property & values like this also for setter action -->  
+   <bean class="com.springcore.setter.Student" name="student3">
+ 		<property name="studentId" value="29611" />
+ 		<property name="studentName" value="Bramhananda Goppavaram"/>
+ 		<property name="studentAddress" value="kadapa"/>
+ 
+ </bean>    
+ 
+ <!-- To inject the values very quickly we'll be using p schema to ensure the pschema we have to add   xmlns:p in <beans>
+ as mentioned in line 4-->
+ <bean class="com.springcore.setter.Student" name="student4" p:studentId="1039" p:studentName="Aswin Akilan" p:studentAddress="Madhurai"/>
+   
+   
+ <bean id="e" class="com.springcore.setter.Student">  
+<constructor-arg value="10" type="int"></constructor-arg>  
+<constructor-arg value="Shiva" type="String"></constructor-arg>
+<constructor-arg value="Bangalore" type="String"></constructor-arg>    
+</bean>   
+</beans>
